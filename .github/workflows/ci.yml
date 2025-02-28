@@ -29,7 +29,7 @@ jobs:
       - name: Run markdown lint
         run: |
           npm install --no-fund remark-cli remark-preset-lint-consistent
-          npx remark . --use remark-preset-lint-consistent --report vfile-reporter-json 2> | tee remark-lint-report.json
+          npx remark . --use remark-preset-lint-consistent --report vfile-reporter-json 2>&1 | tee remark-lint-report.json
           
       - uses: actions/upload-artifact@v4
         with:
